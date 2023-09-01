@@ -1,0 +1,24 @@
+<div class="container">
+
+    <h2 class="mt-4">Preguntas</h2>
+    <form (ngSubmit)="validarRespuestas()" #preguntasForm="ngForm">
+      <div *ngFor="let pregunta of preguntas; let i = index" class="mb-4">
+        <p>{{ pregunta.pregunta }}</p>
+        <div *ngFor="let opcion of pregunta.opciones; let j = index">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" [name]="'pregunta_' + i" [(ngModel)]="pregunta.respuestaSeleccionada" [value]="opcion">
+            <label class="form-check-label">
+              {{ opcion }}
+            </label>
+          </div>
+        </div>
+        <div *ngIf="preguntasForm.submitted">
+          <p [ngClass]="{'text-success': pregunta.esCorrecta, 'text-danger': !pregunta.esCorrecta}">
+            {{ pregunta.esCorrecta ? 'Correcta' : 'Incorrecta' }}
+          </p>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="preguntasForm.submitted">Validar respuestas</button>
+    </form>
+          
+</div>

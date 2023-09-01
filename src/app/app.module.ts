@@ -15,13 +15,16 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
 import { PageOneComponent } from './components/pages/page-one/page-one.component';
 import { PageTwoComponent } from './components/pages/page-two/page-two.component';
+import { SeleccionMultipleComponent } from './components/pages/seleccion-multiple/seleccion-multiple.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
     PageOneComponent,
-    PageTwoComponent
+    PageTwoComponent,
+    SeleccionMultipleComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,8 @@ import { PageTwoComponent } from './components/pages/page-two/page-two.component
     MatMenuModule,
     MatExpansionModule,
     MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
