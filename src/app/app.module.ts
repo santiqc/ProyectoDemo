@@ -17,6 +17,7 @@ import { PageOneComponent } from './components/pages/page-one/page-one.component
 import { PageTwoComponent } from './components/pages/page-two/page-two.component';
 import { SeleccionMultipleComponent } from './components/pages/seleccion-multiple/seleccion-multiple.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContentHomeComponent } from './components/home/content-home/content-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     PageOneComponent,
     PageTwoComponent,
-    SeleccionMultipleComponent
+    SeleccionMultipleComponent,
+    ContentHomeComponent
   ],
   imports: [
     BrowserModule,

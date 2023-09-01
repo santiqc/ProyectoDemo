@@ -4,12 +4,17 @@ import { HomeComponent } from './components/home/home/home.component';
 import { PageOneComponent } from './components/pages/page-one/page-one.component';
 import { PageTwoComponent } from './components/pages/page-two/page-two.component';
 import { SeleccionMultipleComponent } from './components/pages/seleccion-multiple/seleccion-multiple.component';
+import { ContentHomeComponent } from './components/home/content-home/content-home.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: '', // Ruta inicial
     component: HomeComponent,
     children: [
+      {
+        path: '',
+        component: ContentHomeComponent,
+      },
       {
         path: 'actividad1/niveles/nivel1-1',
         component: PageOneComponent,
@@ -25,12 +30,11 @@ const routes: Routes = [
     ],
   },
   {
-    path: '**', 
+    path: '**',
     redirectTo: '',
-    pathMatch: 'full'
-  } 
+    pathMatch: 'full',
+  },
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
